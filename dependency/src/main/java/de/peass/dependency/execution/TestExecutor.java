@@ -107,6 +107,7 @@ public abstract class TestExecutor {
 
    public Process buildFolderProcess(final File currentFolder, final File logFile, final String[] vars) throws IOException {
       String[] envPropertyArray = env.getProperties().length() > 0 ? env.getProperties().split(" ") : new String[0];
+      LOG.debug("Properties: {}", env.getProperties());
       final String[] varsWithProperties = concatenateCommandArrays(vars, envPropertyArray);
       LOG.debug("Command: {}", Arrays.toString(varsWithProperties));
       
